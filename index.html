@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Sign-Up Form</title>
+    <script defer src="script/script.js"></script>
+   
 </head>
 <body>
     <section>
@@ -18,28 +20,32 @@
             
             <h1>Get Started </h1>
 
-            <form action="" method="get">
+            <form id="form" action="" method="get">
 
                 <fieldset >
                     <div class="input-form">
                         <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name" placeholder='John..'>
+                        <input class="input-field" type="text" id="first_name" name="first_name" placeholder='John..' required>
+                        
                     </div>
                     
                     <div class="input-form">
                         <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" placeholder='Smith..'>
+                        <input class="input-field" type="text" id="last_name" name="last_name" placeholder='Smith..' required>
+                        
                     </div> 
                 </fieldset>
                 
                 <fieldset >
                     <div class="input-form">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder='joe@example.com'>
+                        <input class='input-field'type="email" id="email" name="email" placeholder='joe@example.com' required>
+                        
                     </div>
                     <div class="input-form">
                         <label for="phone_number">Phone Number</label>
-                        <input type="number" id="phone_number" name="phone_number" placeholder='+31611276361'>
+                        <input class='input-field' type="tel" id="phone_number" name="phone_number" placeholder='+31611276361' required>
+                        
                     </div>
 
                 </fieldset>
@@ -47,16 +53,18 @@
                 <fieldset >
                     <div class="input-form">
                         <label for="password">Password</label>
-                         <input type="password" id="password" name="password">
+                         <input  class='input-field' type="password" id="password" name="password" placeholder='****' >
+                         <small class="error">Error Message</small>
                     </div>
                     <div class="input-form">
                         <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password">
+                        <input  class='input-field'type="password" id="confirm_password" name="confirm_password" placeholder='****' >
+                        <!-- <small class="error">Error Message</small> -->
                     </div>
                 </fieldset>
 
                 <div class="create--acc--btn">
-                <button type="submit">Create Account</button>
+                <button type="submit" id="submit-btn" value="submit" style="cursor: pointer;">Create Account</button>
                 <p>Already have an account..? <a href="">LOG IN</a></p>
             </div>
             </form>

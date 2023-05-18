@@ -44,55 +44,84 @@ section{
     background: white;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    max-width: 85%;
-    padding: 20px;
+    padding: var(--space-sm);
+    /* max-width: 100%; */
 }
 
 img{
-    max-width: 500px;
+    max-width: 450px;
 }
 
-.form-container{
+/* .form-container{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-}
+} */
 
 fieldset {
-    display: flex; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding:0; 
-    width: auto;  
-    /* flex-wrap: wrap;  */
+    
 }
 
 
 .input-form{
+    box-sizing: border-box;
+    height: 100px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-sm);
 }
 
+.input-form input:focus{ 
+    outline: 0;
+    border-bottom: 5px solid var(--button-color);
+}
+
+.input-form.success input {
+    outline: 0;
+    border-bottom: 5px solid var(--button-color);
+}
+
+.input-form.error input {
+    outline: 0;
+    border-bottom: 5px solid red;
+}
+
+
+
 input{
+    
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: var(--space-sm);
     margin-right: 50px;
-    max-width: 90%;
+    max-width: 250px; 
     
 }
 
-input:focus{
-    outline: none !important;
-    border: 2px solid var(--button-color);
-}
 
+
+
+  
+label:after {
+    content: '*';
+    color: red;
+  }
+
+
+
+  small{
+    display: none;
+    color: red;
+  }
 
 
 
@@ -116,7 +145,7 @@ p{
 
 
 .create--acc--btn{
-    margin-top: 30px;
+    margin-top: var(--space-md);
     display: flex;
     flex-direction:column ;
     justify-content: center;
@@ -127,8 +156,9 @@ button{
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     font-size: var(--font-lg);
-    text-transform: uppercase;
     padding: var(--space-sm);
+    text-transform: uppercase;
+    margin-right: 50px;
     max-width: 250px;  
 }
 
@@ -145,14 +175,20 @@ a{
 
 @media only screen and (max-width: 750px) {
 
+    section{
+        flex-wrap: wrap;
+    }
+
     .form-container{
         justify-content: center;
         flex-direction: column;
     }
     
     fieldset {
-        justify-content: center;
-        flex-direction: column;
+        /* justify-content: center;
+        flex-direction: column; */
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
     img{
